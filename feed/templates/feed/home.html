@@ -1,0 +1,19 @@
+{% extends 'feed/base.html' %}
+
+<br>
+{% block content %}
+<div class="container">
+ {% for tweet in tweets %}
+    <div class="card">
+        <div class="card-header">
+          <a href="#">{{tweet.uname}}</a>
+          <p>{{tweet.datetime}}</p>
+        </div>
+        <div class="card-body">
+          <p class="card-text">{{tweet.text}}</p>
+        </div>
+    </div>
+    <br>
+ {% endfor %}
+</div>
+{% endblock content %}
