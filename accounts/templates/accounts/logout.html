@@ -13,28 +13,9 @@
     	<h2 align="center" style="color:blue">Twitter Clone</h2>
     	<br><br>
     	<div class="container">
-
-    		<form method="POST">
-
-    			{% csrf_token %}
-    			<fieldset class="form-group">
-    				<legend class="border-bottom mb-4">Login</legend>
-    				{{ form }}
-    			</fieldset>
-
-    			<div class="form-group">
-    				<button class="btn btn-outline-info" type="submit">Login</button>
-    			</div>
-
-    			<a href="#">Create a new account?</a>
-
-    		</form>
+           <h4>Logged Out!!</h4>
+           <a href="{% url 'login' %}">Click here to login</a>	
     	</div>
-    	{% if messages %}
-        {% for message in messages %}
-           {{message}}
-        {% endfor %}
-        {% endif %}
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">

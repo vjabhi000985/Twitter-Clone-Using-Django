@@ -1,0 +1,25 @@
+{% extends 'feed/base.html' %}
+
+{% block content %}
+   
+    <div class="container">
+    	<div class="col-sm-2">
+    		<div class="media">
+    			<img class="rounded-circle account-img img-fluid" src="{{user.profile.image.url}}">
+    		</div>
+
+    	</div>
+    	<br>
+
+    	<h3>{{user.username}}</h3>
+
+    	<br><br>
+
+    	<div class="card">
+    		<div class="card-body">
+    			{{user.profile.bio}}
+    		</div>
+    	</div>
+    </div>
+
+{% endblock content %}
