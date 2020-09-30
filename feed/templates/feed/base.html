@@ -19,9 +19,9 @@
               <ul class="nav navbar-nav">
                 <li><a href="{% url 'home' %}">Home</a></li>
               </ul>
-              <ul class="nav navbar-nav">
-                <li><a href="{% url 'profile' %}">Profile</a></li>
-              </ul>
+              <a class="navbar-brand" href="{% url 'profile' %}">
+                <img class="rounded-circle account-img img-fluid" src="{{user.profile.image.url}}" width="50" height="50" alt="#">
+              </a>
               <ul class="nav navbar-nav">
                 <li><a href="{% url 'logout' %}">Logout</a></li>
               </ul>

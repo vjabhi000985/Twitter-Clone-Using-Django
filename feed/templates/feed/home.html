@@ -3,14 +3,29 @@
 <br>
 {% block content %}
 <div class="container">
- {% for tweet in tweets %}
+<div class="jumbotron">
+  <h1 class="display-4">Hello,{{user.username}}</h1>
+  <p class="lead">This is a simple twitter clone.</p>
+  <hr class="my-4">
+  <p>Click Below to Create a tweet.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="{% url 'tweetcreate' %}" role="button">Create</a>
+  </p>
+</div>
+</div>
+<div class="container">
+ {% for tweet in object_list %}
     <div class="card">
         <div class="card-header">
           <a href="#">{{tweet.uname}}</a>
           <p>{{tweet.datetime}}</p>
         </div>
         <div class="card-body">
-          <p class="card-text">{{tweet.text}}</p>
+          <p class="card-text">{{tweet.text}}</p>+
+          {% if tweet.uname == user %}
+          <a href="{% url 'tweetupdate' tweet.id %}"><button class="btn btn-outline-info">Update</button></a>
+          <a href="{% url 'tweetdelete' tweet.id %}"><button class="btn btn-outline-danger">Delete</button></a>
+          {% endif %}
         </div>
     </div>
     <br>
